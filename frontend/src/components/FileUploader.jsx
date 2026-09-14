@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 import './FileUploader.css'
 
-const ACCEPTED = '.csv,.xls,.xlsx'
+const ACCEPTED = '.csv,.xls,.xlsx,.data,.txt'
 
 export default function FileUploader({ onFile }) {
   const inputRef = useRef(null)
@@ -13,8 +13,8 @@ export default function FileUploader({ onFile }) {
   function handleFile(f) {
     if (!f) return
     const ext = f.name.split('.').pop().toLowerCase()
-    if (!['csv', 'xls', 'xlsx'].includes(ext)) {
-      setError('Please upload a .csv, .xls, or .xlsx file.')
+    if (!['csv', 'xls', 'xlsx', 'data', 'txt'].includes(ext)) {
+      setError('Please upload a .csv, .xls, .xlsx, or .data file.')
       return
     }
     setError(null)

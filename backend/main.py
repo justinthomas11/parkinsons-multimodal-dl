@@ -37,7 +37,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-MODELS_DIR = os.getenv("MODELS_DIR", "models")
+MODELS_DIR = os.getenv("MODELS_DIR", os.path.join(os.path.dirname(os.path.abspath(__file__)), "models"))
 
 # ── Model / scaler cache ──────────────────────────────────────────────────────────
 _model_cache: dict[str, tf.keras.Model] = {}
@@ -88,12 +88,13 @@ async def predict(
     filename = file.filename or ""
 
     try:
-        if filename.endswith(".csv"):
+        lower_name = filename.lower()
+        if lower_name.endswith((".csv", ".data", ".txt")):
             df = pd.read_csv(io.BytesIO(content))
-        elif filename.endswith((".xls", ".xlsx")):
+        elif lower_name.endswith((".xls", ".xlsx")):
             df = pd.read_excel(io.BytesIO(content))
         else:
-            raise HTTPException(status_code=400, detail="File must be .csv, .xls, or .xlsx")
+            raise HTTPException(status_code=400, detail="File must be .csv, .data, .txt, .xls, or .xlsx")
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Could not parse file: {e}")
 
