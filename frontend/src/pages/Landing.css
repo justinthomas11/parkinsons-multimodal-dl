@@ -1,0 +1,208 @@
+/* ── How It Works ─────────────────────────────────────────── */
+.how-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-6);
+  margin-top: var(--sp-12);
+  position: relative;
+}
+
+.how-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--sp-3);
+}
+
+.how-step-num {
+  font-size: var(--text-xs);
+  font-weight: 800;
+  letter-spacing: .12em;
+  color: var(--clr-primary);
+  text-transform: uppercase;
+}
+
+.how-step-icon {
+  font-size: 2rem;
+  width: 64px; height: 64px;
+  background: var(--clr-primary-lt);
+  border-radius: var(--r-lg);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.how-step-title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--clr-text);
+}
+
+.how-step-desc {
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.how-step-arrow {
+  position: absolute;
+  right: calc(-1 * var(--sp-6) / 2 - 10px);
+  top: 42px;
+  font-size: 1.4rem;
+  color: var(--clr-text-3);
+}
+
+@media (max-width: 860px) {
+  .how-steps { grid-template-columns: repeat(2, 1fr); }
+  .how-step-arrow { display: none; }
+}
+@media (max-width: 480px) {
+  .how-steps { grid-template-columns: 1fr; }
+}
+
+/* ── Fusion banner ────────────────────────────────────────── */
+.fusion-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-top: var(--sp-10);
+  padding: var(--sp-5) var(--sp-8);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.fusion-eq {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-text);
+  background: var(--clr-surface-2);
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-sm);
+  border: 1px solid var(--clr-border);
+}
+
+.fusion-op {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+.fusion-arrow {
+  font-size: var(--text-xl);
+  color: var(--clr-text-3);
+}
+
+.fusion-result { font-size: var(--text-sm) !important; padding: var(--sp-2) var(--sp-4) !important; }
+
+/* ── Results + Architecture ───────────────────────────────── */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-12);
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .results-grid { grid-template-columns: 1fr; }
+}
+
+/* Architecture diagram */
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.arch-layer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  border: 1.5px solid;
+  border-radius: var(--r-md);
+  margin-bottom: var(--sp-2);
+  position: relative;
+}
+
+.arch-layer:not(:last-child)::after {
+  content: '↓';
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--clr-text-3);
+  font-size: var(--text-base);
+}
+
+.arch-layer-name {
+  font-weight: 700;
+  font-size: var(--text-base);
+  color: var(--clr-text);
+}
+
+/* ── Tech Stack ───────────────────────────────────────────── */
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-4);
+  margin-top: var(--sp-10);
+}
+
+.tech-chip {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-5);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-text);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur-base) var(--ease), transform var(--dur-base) var(--ease);
+}
+
+.tech-chip:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* ── CTA ──────────────────────────────────────────────────── */
+.cta-box {
+  background: var(--grad-hero);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-xl);
+  padding: var(--sp-16) var(--sp-8);
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+.cta-title {
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--clr-text);
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Footer ───────────────────────────────────────────────── */
+.landing-footer {
+  border-top: 1px solid var(--clr-border);
+  padding-block: var(--sp-6);
+}
+
+.landing-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--clr-text-3);
+}
+
+@media (max-width: 480px) {
+  .landing-footer .container { flex-direction: column; gap: var(--sp-2); text-align: center; }
+}

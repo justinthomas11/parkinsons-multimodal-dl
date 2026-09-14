@@ -1,0 +1,82 @@
+.uploader-wrapper { display: flex; flex-direction: column; gap: var(--sp-3); }
+
+.uploader-zone {
+  border: 2px dashed var(--clr-border);
+  border-radius: var(--r-lg);
+  padding: var(--sp-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  text-align: center;
+  cursor: pointer;
+  background: var(--clr-surface);
+  transition: border-color var(--dur-base) var(--ease),
+              background var(--dur-base) var(--ease),
+              box-shadow var(--dur-base) var(--ease);
+}
+
+.uploader-zone:hover,
+.uploader-zone.dragging {
+  border-color: var(--clr-primary);
+  background: var(--clr-primary-lt);
+  box-shadow: 0 0 0 4px rgba(79,70,229,.08);
+}
+
+.uploader-zone.has-file {
+  border-style: solid;
+  border-color: var(--clr-success);
+  background: #ECFDF5;
+  cursor: default;
+}
+
+.uploader-input { display: none; }
+
+.uploader-icon { font-size: 2.5rem; line-height: 1; }
+.uploader-main { font-size: var(--text-base); font-weight: 600; color: var(--clr-text); }
+
+.uploader-file-info {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  max-width: 400px;
+}
+
+.uploader-file-icon { font-size: 2rem; flex-shrink: 0; }
+
+.uploader-file-details {
+  flex: 1;
+  text-align: left;
+}
+
+.uploader-file-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--clr-text);
+  word-break: break-all;
+}
+
+.uploader-clear {
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border: none;
+  border-radius: var(--r-full);
+  background: rgba(0,0,0,.07);
+  color: var(--clr-text-2);
+  cursor: pointer;
+  font-size: var(--text-sm);
+  flex-shrink: 0;
+  transition: background var(--dur-fast) var(--ease);
+}
+.uploader-clear:hover { background: rgba(239,68,68,.15); color: var(--clr-danger); }
+
+.uploader-error {
+  color: var(--clr-danger);
+  font-size: var(--text-sm);
+  padding: var(--sp-2) var(--sp-3);
+  background: #FEF2F2;
+  border-radius: var(--r-sm);
+  border: 1px solid #FECACA;
+}

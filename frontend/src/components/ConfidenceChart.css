@@ -1,0 +1,24 @@
+.conf-chart-wrapper { padding: var(--sp-5); }
+
+.conf-chart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sp-4);
+}
+
+.conf-chart-title { font-size: var(--text-lg); font-weight: 700; }
+
+.conf-chart-legend { display: flex; align-items: center; gap: var(--sp-2); }
+
+.conf-legend-dot {
+  display: inline-block;
+  width: 10px; height: 10px;
+  border-radius: var(--r-full);
+}
+
+.conf-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+}
