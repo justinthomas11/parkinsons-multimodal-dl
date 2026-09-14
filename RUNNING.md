@@ -12,7 +12,7 @@
 cd backend
 
 # Install dependencies
-pip install -r requirements-backend.txt
+pip install -r backend_deps.txt
 
 # Place your dataset files in backend/data/
 #   demographics (1).xls   ← gait dataset
@@ -64,7 +64,7 @@ parkinsons-multimodal-prediction-main/
 │   ├── main.py              # FastAPI app
 │   ├── pipeline.py          # Preprocessing pipeline
 │   ├── train_and_save.py    # One-time training script
-│   ├── requirements-backend.txt
+│   ├── backend_deps.txt
 │   ├── data/                # ← place datasets here
 │   └── models/              # ← trained .keras models saved here
 └── frontend/
